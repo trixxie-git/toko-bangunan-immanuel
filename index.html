@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Toko Bangunan Immanuel</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script>
+      // Daftar produk untuk pencarian
+      const products = [
+  "Besi",
+  "Semen Conch",
+  "Keramik",
+  "Palu",
+  "Gunting",
+  "Selang",
+  "Tong Air",
+  "Pipa pvc",
+  "Pipa listrik",
+  "GRC",
+  "Canal C",
+  "Besi Serbaguna",
+  "Kunci Pintu",
+  "Engsel Pintu",
+  "Grendel Pintu & Jendela",
+  "Lem Pipa",
+  "Lem Fox",
+  "Lem Eha Bond",
+  "Topi Proyek",
+  "Cornice",
+  "Cat Dinding",
+  "Cat Minyak",
+  "Kuas",
+  "Slot Pintu",
+  "Kran Air",
+  "Obeng",
+  "Sambungan Pipa",
+  "Pensil Tukang",
+  "Gergaji",
+  "Ember Cor",
+  "Lampu",
+  "Paku Seng",
+  "Paku Kayu",
+  "Saklar",
+  "Kabel",
+  "Stop Kontak",
+  "Solasiban",
+  "Cutter",
+  "Karung",
+  "Benang Katun",
+  "Mata Bor Beton",
+  "Meter",
+  "Mesin Skap",
+  "Terpal",
+  "Kawa Las",
+  "Seng Plastik",
+  "Bondex",
+  "Kaca Blok"
+];
+
+// Fungsi untuk menangani pencarian
+function searchProduct(event) {
+  event.preventDefault(); // Mencegah form dari submit default
+  const searchInput = document
+    .querySelector('input[name="search"]')
+    .value.toLowerCase();
+  const foundProduct = products.find(
+    (product) => product.toLowerCase() === searchInput
+  );
+
+  if (foundProduct) {
+    alert(`Produk ditemukan: ${foundProduct}`);
+    // Arahkan ke produk yang ditemukan
+    const productId = foundProduct.toLowerCase().replace(/ /g, "-"); // Ganti spasi dengan tanda hubung
+    const productElement = document.getElementById(productId);
+    if (productElement) {
+      productElement.scrollIntoView({ behavior: "smooth" }); // Gulir ke produk
+    }
+  } else {
+    alert("Produk tidak ditemukan.");
+  }
+}
+  </script>
+
+  </head>
+  <body>
+    <!--Navbar start-->
+    <nav>
+      <ul class="menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">Tentang Kami</a></li>
+        <li><a href="#Produk">Produk</a></li>
+        <li><a href="#Kontak">Kontak</a></li>
+      </ul>
+      <div class="search">
+        <form onsubmit="searchProduct(event)">
+          <input type="text" name="search" placeholder="Search..." />
+          <button type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+    <!--Navbar end-->
+
+    <!--Halaman Utama start-->
+    <section class="hero" id="home">
+      <main class="content">
+        <h1>TOKO BANGUNAN IMMANUEL</h1>
+        <button class="cta" onclick="location.href='#Kontak'">HUBUNGI KAMI </button>
+      </main>
+    </section>
+    <!--Halaman utama end-->
+
+    <!--Tentang kami start-->
+    <section id="about" class="about">
+      <h2><span>Tentang</span> Kami</h2>
+      <div class="row">
+        <div class="about-img">
+          <img src="img p/project 2.jpeg" alt="Tentang Kami" />
+        </div>
+        <div class="content">
+          <h3>kenapa memilih tokoh kami</h3>
+          <p>
+            Toko Bangunan Immanuel buka sejak tahun 2017 , kami berdiri dengan tujuan untuk memberikan pelayanan yang terbaik kepada masyarakat
+          </p>
+          <p>
+            untuk selengkapnya anda bisa menghubungi kami di kontak kami atau mengunjungi toko kami di desa Towuntu, Kec. Pasan, Kabupaten Minahasa Tenggara 
+          </p>
+        </div>
+      </div>
+    </section>
+    <!--Tentang kami end-->
+
+    <!--Produk start-->
+    <section id="Produk" class="Produk">
+      <h2>PRODUK</h2>
+      <p>Maaf Jika Produk yang Anda cari Tidak ada,Anda bisa mengunjungi toko kami atau menghubungi kami di halaman kontak kami Terima Kasih</p>
+      <div class="row">
+        <div id="besi" class="Produk-card">
+          <img src="Produk/1.jpg.jpg" alt="besi" class="produk-card-img" />
+          <h3 class="Produk-card-title">- Besi -</h3>
+        </div>
+        <div id="semen-conch" class="Produk-card">
+          <img src="produk/semen conch.jpg" class="produk-card-img" />
+          <h3 class="Produk-card-title">- Semen Conch -</h3>
+        </div>
+        <div id="keramik" class="Produk-card">
+          <img src="produk/keramik.jpg" class="produk-card-img" />
+          <h3 class="Produk-card-title">- keramik -</h3>
+        </div>
+        <div id="palu" class="Produk-card">
+          <img src="produk/palu.jpg" class="produk-card-img" />
+          <h3 class="Produk-card-title">- Palu -</h3>
+        </div>
+         <div id="gunting" class="Produk-card">
+          <img src="Produk/gunting.jpg" class="produk-card-img" />
+          <h3 class="Produk-card-title">- Gunting -</h3>
+        </div>
+        <div id="selang" class="Produk-card">
+          <img src="produk/selang.jpg" class="produk-card-img" />
+          <h3 class="Produk-card-title">- Selang -</h3>
+        </div>
+        <div id="tong-air" class="Produk-card">
+          <img src="Produk/tong air.jpg" class="produk-card-img" />
+          <h3 class="Produk-card-title">- Tong Air -</h3>
+        </div>
+        <div id="pipa-pvc" class="Produk-card">
+          <img src="Produk/Pipa pvc.jpg" class="produk-card-img" />
+          <h3 class="Produk-card-title">- Pipa pvc -</h3>
+        </div>
+        <div id="pipa-listrik" class="Produk-card">
+          <img src="Produk/pipa listrik.jpg" class="produk-card-img" />
+          <h3 class="Produk-card-title">- Pipa listrik -</h3>
+        </div>
+        <div id="grc" class="Produk-card">
+          <img src="Produk/GRC.jpg" class="produk-card-img" />
+          <h3 class="Produk-card-title">- GRC -</h3>
+        </div>
+        <div id="canal-c" class="Produk-card">
+          <img src="Produk/canal c.jpg" class="produk-card-img" />
+          <h3 class="Produk-card-title">- Canal C -</h3>
+        </div>
+        <div id="besi-serbaguna" class="Produk-card">
+          <img src="Produk/besi serbaguna.jpg" class="produk-card-img" />
+          <h3 class="Produk-card-title">- Besi Serbaguna -</h3>
+        </div>
+        <div id="kunci-pintu" class="Produk-card">
+          <img src="Produk/kunci pintu.jpg" class="produk-card-img" />
+          <h3 class="Produk-card-title">- Kunci Pintu -</h3>
+        </div>        
+        <div id="engsel-pintu" class="Produk-card">
+          <img src="Produk/engsel pintu.jpg" class="produk-card-img" />
+          <h3 class="Produk-card-title">- Engsel Pintu -</h3>
+        </div>        
+        <div id="grendel-pintu-&-jendela" class="Produk-card">
+          <img src="Produk/Grendel Pintu & Jendela.jpg" class="produk-card-img" />
+          <h3 class="Produk-card-title">- Grendel Pintu & Jendela -</h3>
+        </div>
+        <div id="lem-pipa" class="Produk-card">
+          <img src="Produk/Lem pipa.jpg" class="produk-card-img" />
+          <h3 class="Produk-card-title">- Lem Pipa -</h3>
+        </div>
+        <div id="lem-fox" class="Produk-card">
+          <img src="Produk/lem fox.jpg" class="produk-card-img" />
+          <h3 class="Produk-card-title">- Lem Fox -</h3>
+        </div>
+        <div id="lem-eha-bond" class="Produk-card">
+          <img src="Produk/lem eha bond.jpg" class="produk-card-img" />
+          <h3 class="Produk-card-title">- Lem Eha Bond -</h3>
+        </div>
+        <div id="topi-proyek" class="Produk-card">
+          <img src="Produk/topi proyek.jpg" class="produk-card-img" />
+          <h3 class="Produk-card-title">- Topi Proyek -</h3>
+        </div>
+        <div id="cornice" class="Produk-card">
+          <img src="Produk/cornice.jpg" class="produk-card-img" />
+          <h3 class="Produk-card-title">- Cornice -</h3>
+        </div>
+        <div id="cat-dinding" class="Produk-card">
+          <img src="Produk/cat dinding.jpg" class="produk-card-img" />
+          <h3 class="Produk-card-title">- Cat Dinding -</h3>
+        </div>
+        <div id="cat-minyak" class="Produk-card">
+          <img src="Produk/cat minyak.jpg" class="produk-card-img" />
+          <h3 class="Produk-card-title">- Cat Minyak -</h3>
+        </div>
+        <div id="Kuas" class="Produk-card">
+          <img src="Produk/kuas.jpg" class="produk-card-img" />
+          <h3 class="Produk-card-title">- Kuas -</h3>
+        </div>
+        <div id="slot-pintu" class="Produk-card">
+          <img src="Produk/slot pintu.jpg" class="produk-card-img" />
+          <h3 class="Produk-card-title">- Slot Pintu -</h3>
+        </div>
+        <div id="kran-air" class="Produk-card">
+          <img src="Produk/kran air.jpg" class="produk-card-img" />
+          <h3 class="Produk-card-title">- Kran Air -</h3>
+        </div>
+        <div id="sambungan-pipa" class="Produk-card">
+          <img src="Produk/sambungan pipa.jpg" class="produk-card-img" />
+          <h3 class="Produk-card-title">- Sambungan Pipa -</h3>
+        </div>
+        <div id="pensil-tukang" class="Produk-card">
+          <img src="Produk/pensil tukang.jpg" class="produk-card-img" />
+          <h3 class="Produk-card-title">- Pensil Tukang -</h3>
+        </div>
+        <div id="gergaji" class="Produk-card">
+          <img src="Produk/gergaji.jpg" class="produk-card-img" />
+          <h3 class="Produk-card-title">- Gergaji -</h3>
+        </div>
+        <div id="ember-cor" class="Produk-card">
+          <img src="Produk/ember cor.jpg" class="produk-card-img" />
+          <h3 class="Produk-card-title">- Ember Cor -</h3>
+        </div>
+        <div id="lampu" class="Produk-card">
+          <img src="Produk/lampu.jpg" class="produk-card-img" />
+          <h3 class="Produk-card-title">- Lampu -</h3>
+        </div>
+        <div id="paku-seng" class="Produk-card">
+          <img src="Produk/paku seng.jpg" class="produk-card-img" />
+          <h3 class="Produk-card-title">- Paku Seng -</h3>
+        </div>
+        <div id="paku-kayu" class="Produk-card">
+          <img src="Produk/paku kayu.jpg" class="produk-card-img" />
+          <h3 class="Produk-card-title">- Paku Kayu -</h3>
+        </div>
+        <div id="saklar" class="Produk-card">
+          <img src="Produk/saklar.jpg" class="produk-card-img" />
+          <h3 class="Produk-card-title">- Saklar -</h3>
+        </div>
+        <div id="kabel" class="Produk-card">
+          <img src="Produk/kabel.jpg" class="produk-card-img" />
+          <h3 class="Produk-card-title">- Kabel -</h3>
+        </div>
+        <div id="stop-kontak" class="Produk-card">
+          <img src="Produk/stop kontak.jpg" class="produk-card-img" />
+          <h3 class="Produk-card-title">- Stop Kontak -</h3>
+        </div>
+        <div id="solasiban" class="Produk-card">
+          <img src="Produk/solasiban.jpg" class="produk-card-img" />
+          <h3 class="Produk-card-title">- Solasiban -</h3>
+        </div>
+        <div id="cutter" class="Produk-card">
+          <img src="Produk/cutter.jpg" class="produk-card-img" />
+          <h3 class="Produk-card-title">- Cutter -</h3>
+        </div>
+        <div id="karung" class="Produk-card">
+          <img src="Produk/karung.jpg" class="produk-card-img" />
+          <h3 class="Produk-card-title">- karung -</h3>
+        </div>
+        <div id="benang-katun" class="Produk-card">
+          <img src="Produk/benang katun.jpg" class="produk-card-img" />
+          <h3 class="Produk-card-title">- Benang Katun -</h3>
+        </div>
+        <div id="mata-bor-beton" class="Produk-card">
+          <img src="Produk/mata bor beton.jpg" class="produk-card-img" />
+          <h3 class="Produk-card-title">- Mata Bor Beton -</h3>
+        </div>
+        <div id="meter" class="Produk-card">
+          <img src="Produk/meter.jpg" class="produk-card-img" />
+          <h3 class="Produk-card-title">- Meter -</h3>
+        </div>
+        <div id="mesin-skap" class="Produk-card">
+          <img src="Produk/Mesin skap.jpg" class="produk-card-img" />
+          <h3 class="Produk-card-title">- Mesin Skap -</h3>
+        </div>
+        <div id="terpal" class="Produk-card">
+          <img src="Produk/terpal.jpg" class="produk-card-img" />
+          <h3 class="Produk-card-title">- Terpal -</h3>
+        </div>
+        <div id="kawat-las" class="Produk-card">
+          <img src="Produk/kawat las.jpg" class="produk-card-img" />
+          <h3 class="Produk-card-title">- Kawat Las -</h3>
+        </div>
+        <div id="seng-plastik" class="Produk-card">
+          <img src="Produk/seng plastik.jpg" class="produk-card-img" />
+          <h3 class="Produk-card-title">- Seng Plastik -</h3>
+        </div>
+        <div id="bondex\" class="Produk-card">
+          <img src="Produk/bondex.jpg" class="produk-card-img" />
+          <h3 class="Produk-card-title">- Bondex -</h3>
+        </div>
+        <div id="kaca-blok" class="Produk-card">
+          <img src="Produk/kaca blok.jpg" class="produk-card-img" />
+          <h3 class="Produk-card-title">- Kaca Blok -</h3>
+        </div>
+    </section>
+    <!--Produk end-->
+
+    <!--contact start-->
+    <section id="Kontak" class="Kontak">
+      <h2><span>Kontak</span> Kami</h2>
+      <p>Untuk Pembelian Anda Bisa Mengbungi Nomor Di samping ini <u>+62 813-5543-4527</u></p>
+      <p>Dibawah ini merupakan lokasi kami</p>
+
+      <div class="row">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d249.323902125169!2d124.7487397583124!3d1.0229551340724585!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x32874cf39b642cdf%3A0x9e0cfb47d8a9b5fd!2sToko%20Bangunan%20Immanuel!5e0!3m2!1sen!2sid!4v1731466704970!5m2!1sen!2sid"allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="map"></iframe>
+      
+        
+      </div>
+    <!--contact end-->
+
+    <!--footer start-->
+    <footer>
+      <div class="links">
+        <a href="#home">Home</a>
+        <a href="#about">Tentang Kami</a>
+        <a href="#Produk">Produk</a>
+        <a href="#Kontak">Kontak</a>
+      </div>
+    </footer>
+    <!--footer end-->
+  </body>
+</html>
